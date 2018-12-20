@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+
+        	function Validation()
+			{
+					var a = document.contactform.contact.value;
+					if(a.length!=10)
+					{
+					alert("Enter a valid Mobile Number");
+					document.contactform.contact.select();
+					return false;
+					}
+          if(isNaN(a))
+					{
+					alert("Enter a valid Mobile Number");
+					document.form.phone.focus();
+					return false;
+					}
+          
+          
+           var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+			        var z=document.contactform.email.value;
+			        if (reg.test(z)==false) 
+			        {
+			            alert('Invalid Email Address');
+			            document.contactform.email.focus();
+			            return false;
+			        }
+              
+              
+					return true;
+			}
+		
+      </script>
+
+</head>
+<body>
+
+
+
+
+<div class="container">
+  <h3 align="center">Contact Form</h3>
+  <form form name="contactform" action="/action_page.php" onsubmit="return Validation()">
+
+    <input type="text" id="fname" name="firstname" placeholder="Full Name" required>
+    <input type="text" id="email" name="emalid" placeholder="Email ID" required>
+    <input type="text" id="contact" name="contact" placeholder="Contact (preferably Whatsapp)" required><br>
+    
+  
+  <input type="radio" name="gender" value="male" checked> Male
+  <input type="radio" name="gender" value="female"> Female<br><br>
+  
+  <input type="text" id="college" name="college" placeholder="Name of your Institute">
+
+
+    <label for="course">Course</label>
+    <select id="course" name="course">
+      <option value="btech">B.tech</option>
+      <option value="canada">B.E</option>
+    </select>
+    
+   
+    <div class="custom-select">
+     <label for="branch">Branch</label>
+    <select id="branch" name="branch">
+      <option value="cse">CSE</option>
+      <option value="elec">ELECTRONIC/EE</option>
+      <option value="civil">CIVIL</option>
+      <option value="mech">MECHANICAL</option>
+      <option value="chem">CHEMICAL</option>
+    </select>
+    </div>
+    <br><br>
+
+    <label for="ques1">How would you describe yourself?(80 words)</label>
+    <textarea id="ques1" name="ques1" placeholder="Write something.." style="height:200px" required></textarea><br>
+    
+        <label for="ques2">What do you think you will do as a Campus Ambassador?(80 words)</label>
+    <textarea id="ques2" name="ques2" placeholder="Write something.." style="height:200px" required></textarea><br>
+    
+        <label for="ques3">What makes you suitable for this program?(80 words)</label>
+    <textarea id="ques3" name="ques3" placeholder="Write something.." style="height:200px" required></textarea><br>
+
+    <center><input type="submit" value="Submit"></center>
+  </form>
+</div>
+
+
+
+</body>
+</html>
